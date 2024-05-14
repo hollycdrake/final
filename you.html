@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="index.html" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Concert One' rel='stylesheet'>
+    </head>
+    <body>
+        <h1>About YOU</h1>
+		<br>
+		<img src="https://www.wikihow.com/images/0/0d/Which_friend_are_you.png" alt="group of friends" class="image">
+		<br>
+		<h2>Create Your Own Portfolio!</h2>
+		
+        <form name="portfolio" method="get" id="portfolio">
+        
+        <p>
+        <label for="name">Enter Your Name:</label><br>
+            <input type="text" id="name" name="name">
+            
+        <br>
+        <br>
+            
+        <label for="favclass">What Was Your Favorite Class?</label><br>
+        <input type="text" id="favclass" name="favclass">
+        
+        <br>
+        <br>
+        
+        <label for="proudclass">What Class Are You Most Proud Of?</label><br>
+        <input type="text" id="proudclass" name="proudclass">
+        
+        <br>
+        <br>
+   
+        <label for="grade">What Was Your Grade?</label><br>
+                <input type="radio" id="A" name="grade" value="A">
+                <label for="A">A</label>     
+                <input type="radio" id="B" name="grade" value="B">
+                <label for="B">B</label>
+                <input type="radio" id="C" name="grade" value="C">
+                <label for="C">C</label>
+                <input type="radio" id="D" name="grade" value="D">
+                <label for="D">D</label>
+                <input type="radio" id="F" name="grade" value="F">
+                <label for="F">F</label>
+                
+        <br>
+        <br>
+                
+        <label for="extra">What Club or Sport Did You Enjoy the Most?</label><br>
+        <input type="text" id="extra" name="extra">
+                
+        <br>
+        <br>
+        
+        <label for="why">Why Did You Enjoy It?</label><br>
+        <input type="text" id="why" name="why">
+            
+        <br>
+        <br>
+            
+        <input type="submit" value="Show Story">
+        </form>
+        
+        <br>
+        <br>
+        
+        
+        <p>Image Credit: wikiHow</p>
+        
+        <br>
+        </p>
+<!--Navigation-->
+		<div class="row">
+            <div class="column">
+                <a href="academics.html"><button class="button">Academics</button></a>
+            </div>
+        <div class="column">
+            <a href="extra.html"><button class="button">Activities</button></a>
+        </div>
+        <div class="column">
+            <a href="index.html"><button class="button">Home</button></a>
+        </div>
+        </div>
+        
+        <div id="formContents"></div>
+        
+	
+	<script>
+    
+        var form = document.getElementById("portfolio");
+        form.addEventListener("submit", function(event){
+            event.preventDefault();
+            
+            var name = document.getElementById("name").value;
+            var favclass = document.getElementById("favclass").value;
+            var proudclass = document.getElementById("proudclass").value;
+            var grade = document.querySelector('input[name="grade"]:checked').value;
+            var extra = document.getElementById("extra").value;
+            var why = document.getElementById("why").value;
+            
+            var putStory = document.getElementById("formContents");
+            
+            putStory.innerHTML = "Meet " + 
+                name + "! Their favorite high school class was " +
+                favclass + ", and the class they're most proud of is " + proudclass + ". They got a " + grade + "! Aside from academics, they really enjoyed " +
+                extra + " because " + why + ".";
+                
+            
+            
+        });
+    
+    </script>
+
+    </body>
+</html>
